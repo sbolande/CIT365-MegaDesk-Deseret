@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MegaDesk
+namespace MegaDesk_Deseret
 {
     // Solution from: https://stackoverflow.com/questions/11873378/adding-placeholder-text-to-textbox
     public class PlaceHolderTextBox : TextBox

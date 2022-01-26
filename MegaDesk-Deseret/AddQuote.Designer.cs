@@ -1,4 +1,4 @@
-﻿namespace MegaDesk
+﻿namespace MegaDesk_Deseret
 {
     partial class AddQuote
     {
@@ -46,8 +46,8 @@
             this.rushOpt = new System.Windows.Forms.ComboBox();
             this.rushOptLabel = new System.Windows.Forms.Label();
             this.submitBtn = new System.Windows.Forms.Button();
-            this.lname = new MegaDesk.PlaceHolderTextBox();
-            this.fname = new MegaDesk.PlaceHolderTextBox();
+            this.lname = new MegaDesk_Deseret.PlaceHolderTextBox();
+            this.fname = new MegaDesk_Deseret.PlaceHolderTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.width)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.depth)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.drawerCount)).BeginInit();

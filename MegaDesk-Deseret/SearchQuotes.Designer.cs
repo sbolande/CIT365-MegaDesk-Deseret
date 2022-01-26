@@ -1,4 +1,4 @@
-﻿namespace MegaDesk
+﻿namespace MegaDesk_Deseret
 {
     partial class SearchQuotes
     {

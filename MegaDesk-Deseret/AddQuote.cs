@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MegaDesk
+namespace MegaDesk_Deseret
 {
     public partial class AddQuote : Form
     {

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MegaDesk
+namespace MegaDesk_Deseret
 {
     internal static class Program
     {
