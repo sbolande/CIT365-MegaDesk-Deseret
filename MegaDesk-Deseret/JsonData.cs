@@ -11,7 +11,7 @@ namespace MegaDesk_Deseret
     public static class JsonData
     {
         // file path of JSON DeskQuote List
-        private const string _filepath = @"./DeskQuoteData.json";
+        private const string _filepath = @"./quotes.json";
 
         /// <summary>
         /// Read JSON from <c>JsonData._filepath</c> as a List of DeskQuotes.
@@ -30,7 +30,7 @@ namespace MegaDesk_Deseret
                 // if no file is found then create a default one from an empty list
                 Console.Error.WriteLine("File not found! Creating an empty JSON file.");
                 var emptyData = new List<DeskQuote>();
-                File.WriteAllText(_filepath, JsonConvert.SerializeObject(emptyData));
+                File.WriteAllText(_filepath, JsonConvert.SerializeObject(emptyData, Formatting.Indented));
                 return emptyData;
             }
             catch (Exception ex)
@@ -52,7 +52,7 @@ namespace MegaDesk_Deseret
             // add our new quote
             data.Add(quote);
             // overwrite file with old + new, equivalent to appending new
-            File.WriteAllText(_filepath, JsonConvert.SerializeObject(data));
+            File.WriteAllText(_filepath, JsonConvert.SerializeObject(data, Formatting.Indented));
         }
     }
 }
