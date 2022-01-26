@@ -12,6 +12,8 @@ namespace MegaDesk_Deseret
 {
     public partial class ViewAllQuotes : Form
     {
+        readonly List<DeskQuote> _quotes = JsonData.Read();
+
         public ViewAllQuotes()
         {
             InitializeComponent();
