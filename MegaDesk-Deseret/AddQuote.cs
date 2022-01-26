@@ -55,6 +55,9 @@ namespace MegaDesk_Deseret
             var desk = new Desk(width.Value, depth.Value, (int)drawerCount.Value, desktopMaterial, productionDays);
             var quote = new DeskQuote(fname.Text, lname.Text, desk);
 
+            // save new quote to JSON
+            JsonData.Write(quote);
+            // open DisplayQuote form
             ShowDisplayQuoteForm(quote);
         }
 
