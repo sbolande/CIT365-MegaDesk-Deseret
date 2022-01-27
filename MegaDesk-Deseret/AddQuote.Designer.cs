@@ -264,6 +264,7 @@
             this.rushOpt.Name = "rushOpt";
             this.rushOpt.Size = new System.Drawing.Size(157, 24);
             this.rushOpt.TabIndex = 6;
+            this.rushOpt.SelectedIndexChanged += new System.EventHandler(this.rushOpt_SelectedIndexChanged);
             // 
             // rushOptLabel
             // 

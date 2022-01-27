@@ -17,6 +17,8 @@ namespace MegaDesk_Deseret
         public SearchQuotes()
         {
             InitializeComponent();
+            List<Desk.DesktopMaterial> MaterialList = Enum.GetValues(typeof(Desk.DesktopMaterial)).Cast<Desk.DesktopMaterial>().ToList();
+            materialOpts.DataSource = MaterialList;
         }
 
         /// <summary>
