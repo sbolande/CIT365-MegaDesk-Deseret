@@ -58,10 +58,10 @@
             // 
             this.menuBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.menuBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.menuBtn.Location = new System.Drawing.Point(456, 325);
-            this.menuBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.menuBtn.Location = new System.Drawing.Point(608, 400);
+            this.menuBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.menuBtn.Name = "menuBtn";
-            this.menuBtn.Size = new System.Drawing.Size(135, 31);
+            this.menuBtn.Size = new System.Drawing.Size(180, 38);
             this.menuBtn.TabIndex = 9;
             this.menuBtn.Text = "Go &Back";
             this.menuBtn.UseVisualStyleBackColor = true;
@@ -70,7 +70,8 @@
             // width
             // 
             this.width.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.width.Location = new System.Drawing.Point(71, 55);
+            this.width.Location = new System.Drawing.Point(95, 68);
+            this.width.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.width.Maximum = new decimal(new int[] {
             96,
             0,
@@ -82,7 +83,7 @@
             0,
             0});
             this.width.Name = "width";
-            this.width.Size = new System.Drawing.Size(48, 23);
+            this.width.Size = new System.Drawing.Size(64, 26);
             this.width.TabIndex = 3;
             this.width.Value = new decimal(new int[] {
             24,
@@ -95,7 +96,8 @@
             // depth
             // 
             this.depth.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.depth.Location = new System.Drawing.Point(71, 87);
+            this.depth.Location = new System.Drawing.Point(95, 107);
+            this.depth.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.depth.Maximum = new decimal(new int[] {
             48,
             0,
@@ -107,7 +109,7 @@
             0,
             0});
             this.depth.Name = "depth";
-            this.depth.Size = new System.Drawing.Size(48, 23);
+            this.depth.Size = new System.Drawing.Size(64, 26);
             this.depth.TabIndex = 4;
             this.depth.Value = new decimal(new int[] {
             12,
@@ -118,14 +120,15 @@
             // drawerCount
             // 
             this.drawerCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.drawerCount.Location = new System.Drawing.Point(123, 135);
+            this.drawerCount.Location = new System.Drawing.Point(164, 166);
+            this.drawerCount.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.drawerCount.Maximum = new decimal(new int[] {
             7,
             0,
             0,
             0});
             this.drawerCount.Name = "drawerCount";
-            this.drawerCount.Size = new System.Drawing.Size(48, 23);
+            this.drawerCount.Size = new System.Drawing.Size(64, 26);
             this.drawerCount.TabIndex = 5;
             // 
             // materialOpts
@@ -136,19 +139,23 @@
             this.materialOpts.Controls.Add(this.materialOpt1);
             this.materialOpts.Controls.Add(this.materialOpt0);
             this.materialOpts.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.materialOpts.Location = new System.Drawing.Point(237, 49);
+            this.materialOpts.Location = new System.Drawing.Point(316, 60);
+            this.materialOpts.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.materialOpts.Name = "materialOpts";
-            this.materialOpts.Size = new System.Drawing.Size(215, 180);
+            this.materialOpts.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.materialOpts.Size = new System.Drawing.Size(287, 222);
             this.materialOpts.TabIndex = 7;
             this.materialOpts.TabStop = false;
             this.materialOpts.Text = "Desktop Surface Material";
+            this.materialOpts.MouseCaptureChanged += new System.EventHandler(this.materialOpts_ValueChanged);
             // 
             // materialOpt4
             // 
             this.materialOpt4.AutoSize = true;
-            this.materialOpt4.Location = new System.Drawing.Point(7, 140);
+            this.materialOpt4.Location = new System.Drawing.Point(9, 172);
+            this.materialOpt4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.materialOpt4.Name = "materialOpt4";
-            this.materialOpt4.Size = new System.Drawing.Size(54, 21);
+            this.materialOpt4.Size = new System.Drawing.Size(63, 24);
             this.materialOpt4.TabIndex = 5;
             this.materialOpt4.Text = "Pine";
             this.materialOpt4.UseVisualStyleBackColor = true;
@@ -156,9 +163,10 @@
             // materialOpt3
             // 
             this.materialOpt3.AutoSize = true;
-            this.materialOpt3.Location = new System.Drawing.Point(7, 110);
+            this.materialOpt3.Location = new System.Drawing.Point(9, 135);
+            this.materialOpt3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.materialOpt3.Name = "materialOpt3";
-            this.materialOpt3.Size = new System.Drawing.Size(72, 21);
+            this.materialOpt3.Size = new System.Drawing.Size(83, 24);
             this.materialOpt3.TabIndex = 4;
             this.materialOpt3.Text = "Veneer";
             this.materialOpt3.UseVisualStyleBackColor = true;
@@ -166,9 +174,10 @@
             // materialOpt2
             // 
             this.materialOpt2.AutoSize = true;
-            this.materialOpt2.Location = new System.Drawing.Point(7, 80);
+            this.materialOpt2.Location = new System.Drawing.Point(9, 98);
+            this.materialOpt2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.materialOpt2.Name = "materialOpt2";
-            this.materialOpt2.Size = new System.Drawing.Size(92, 21);
+            this.materialOpt2.Size = new System.Drawing.Size(108, 24);
             this.materialOpt2.TabIndex = 3;
             this.materialOpt2.Text = "Rosewood";
             this.materialOpt2.UseVisualStyleBackColor = true;
@@ -176,9 +185,10 @@
             // materialOpt1
             // 
             this.materialOpt1.AutoSize = true;
-            this.materialOpt1.Location = new System.Drawing.Point(7, 50);
+            this.materialOpt1.Location = new System.Drawing.Point(9, 62);
+            this.materialOpt1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.materialOpt1.Name = "materialOpt1";
-            this.materialOpt1.Size = new System.Drawing.Size(52, 21);
+            this.materialOpt1.Size = new System.Drawing.Size(60, 24);
             this.materialOpt1.TabIndex = 2;
             this.materialOpt1.Text = "Oak";
             this.materialOpt1.UseVisualStyleBackColor = true;
@@ -187,9 +197,10 @@
             // 
             this.materialOpt0.AutoSize = true;
             this.materialOpt0.Checked = true;
-            this.materialOpt0.Location = new System.Drawing.Point(7, 20);
+            this.materialOpt0.Location = new System.Drawing.Point(9, 25);
+            this.materialOpt0.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.materialOpt0.Name = "materialOpt0";
-            this.materialOpt0.Size = new System.Drawing.Size(84, 21);
+            this.materialOpt0.Size = new System.Drawing.Size(99, 24);
             this.materialOpt0.TabIndex = 1;
             this.materialOpt0.TabStop = true;
             this.materialOpt0.Text = "Laminate";
@@ -200,9 +211,10 @@
             this.widthLabel.AutoSize = true;
             this.widthLabel.CausesValidation = false;
             this.widthLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.widthLabel.Location = new System.Drawing.Point(12, 58);
+            this.widthLabel.Location = new System.Drawing.Point(16, 71);
+            this.widthLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.widthLabel.Name = "widthLabel";
-            this.widthLabel.Size = new System.Drawing.Size(48, 17);
+            this.widthLabel.Size = new System.Drawing.Size(57, 20);
             this.widthLabel.TabIndex = 0;
             this.widthLabel.Text = "Width:";
             // 
@@ -211,9 +223,10 @@
             this.depthLabel.AutoSize = true;
             this.depthLabel.CausesValidation = false;
             this.depthLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.depthLabel.Location = new System.Drawing.Point(10, 90);
+            this.depthLabel.Location = new System.Drawing.Point(13, 111);
+            this.depthLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.depthLabel.Name = "depthLabel";
-            this.depthLabel.Size = new System.Drawing.Size(50, 17);
+            this.depthLabel.Size = new System.Drawing.Size(59, 20);
             this.depthLabel.TabIndex = 0;
             this.depthLabel.Text = "Depth:";
             // 
@@ -222,9 +235,10 @@
             this.drawerCountLabel.AutoSize = true;
             this.drawerCountLabel.CausesValidation = false;
             this.drawerCountLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.drawerCountLabel.Location = new System.Drawing.Point(10, 138);
+            this.drawerCountLabel.Location = new System.Drawing.Point(13, 170);
+            this.drawerCountLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.drawerCountLabel.Name = "drawerCountLabel";
-            this.drawerCountLabel.Size = new System.Drawing.Size(92, 17);
+            this.drawerCountLabel.Size = new System.Drawing.Size(111, 20);
             this.drawerCountLabel.TabIndex = 0;
             this.drawerCountLabel.Text = "# of Drawers:";
             // 
@@ -233,9 +247,10 @@
             this.widthLabel2.AutoSize = true;
             this.widthLabel2.CausesValidation = false;
             this.widthLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.widthLabel2.Location = new System.Drawing.Point(121, 58);
+            this.widthLabel2.Location = new System.Drawing.Point(161, 71);
+            this.widthLabel2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.widthLabel2.Name = "widthLabel2";
-            this.widthLabel2.Size = new System.Drawing.Size(49, 17);
+            this.widthLabel2.Size = new System.Drawing.Size(58, 20);
             this.widthLabel2.TabIndex = 0;
             this.widthLabel2.Text = "inches";
             // 
@@ -244,9 +259,10 @@
             this.depthLabel2.AutoSize = true;
             this.depthLabel2.CausesValidation = false;
             this.depthLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.depthLabel2.Location = new System.Drawing.Point(121, 90);
+            this.depthLabel2.Location = new System.Drawing.Point(161, 111);
+            this.depthLabel2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.depthLabel2.Name = "depthLabel2";
-            this.depthLabel2.Size = new System.Drawing.Size(49, 17);
+            this.depthLabel2.Size = new System.Drawing.Size(58, 20);
             this.depthLabel2.TabIndex = 0;
             this.depthLabel2.Text = "inches";
             // 
@@ -260,20 +276,22 @@
             "7 days",
             "5 days",
             "3 days"});
-            this.rushOpt.Location = new System.Drawing.Point(14, 201);
+            this.rushOpt.Location = new System.Drawing.Point(19, 247);
+            this.rushOpt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.rushOpt.Name = "rushOpt";
-            this.rushOpt.Size = new System.Drawing.Size(157, 24);
+            this.rushOpt.Size = new System.Drawing.Size(208, 28);
             this.rushOpt.TabIndex = 6;
-            this.rushOpt.SelectedIndexChanged += new System.EventHandler(this.rushOpt_SelectedIndexChanged);
+            this.rushOpt.SelectedIndexChanged += new System.EventHandler(this.rushOpt_ValueChanged);
             // 
             // rushOptLabel
             // 
             this.rushOptLabel.AutoSize = true;
             this.rushOptLabel.CausesValidation = false;
             this.rushOptLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.rushOptLabel.Location = new System.Drawing.Point(10, 180);
+            this.rushOptLabel.Location = new System.Drawing.Point(13, 222);
+            this.rushOptLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.rushOptLabel.Name = "rushOptLabel";
-            this.rushOptLabel.Size = new System.Drawing.Size(139, 17);
+            this.rushOptLabel.Size = new System.Drawing.Size(164, 20);
             this.rushOptLabel.TabIndex = 0;
             this.rushOptLabel.Text = "Rush Order Options:";
             // 
@@ -281,10 +299,10 @@
             // 
             this.submitBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.submitBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.submitBtn.Location = new System.Drawing.Point(205, 325);
-            this.submitBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.submitBtn.Location = new System.Drawing.Point(273, 400);
+            this.submitBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.submitBtn.Name = "submitBtn";
-            this.submitBtn.Size = new System.Drawing.Size(247, 31);
+            this.submitBtn.Size = new System.Drawing.Size(329, 38);
             this.submitBtn.TabIndex = 8;
             this.submitBtn.Text = "&Submit";
             this.submitBtn.UseVisualStyleBackColor = true;
@@ -294,10 +312,11 @@
             // 
             this.lname.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Italic);
             this.lname.ForeColor = System.Drawing.Color.Gray;
-            this.lname.Location = new System.Drawing.Point(199, 12);
+            this.lname.Location = new System.Drawing.Point(265, 15);
+            this.lname.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lname.Name = "lname";
             this.lname.PlaceHolderText = "Last Name";
-            this.lname.Size = new System.Drawing.Size(253, 23);
+            this.lname.Size = new System.Drawing.Size(336, 26);
             this.lname.TabIndex = 2;
             this.lname.Text = "Last Name";
             this.lname.Leave += new System.EventHandler(this.name_ValueChanged);
@@ -306,19 +325,20 @@
             // 
             this.fname.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Italic);
             this.fname.ForeColor = System.Drawing.Color.Gray;
-            this.fname.Location = new System.Drawing.Point(12, 12);
+            this.fname.Location = new System.Drawing.Point(16, 15);
+            this.fname.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.fname.Name = "fname";
             this.fname.PlaceHolderText = "First Name";
-            this.fname.Size = new System.Drawing.Size(181, 23);
+            this.fname.Size = new System.Drawing.Size(240, 26);
             this.fname.TabIndex = 1;
             this.fname.Text = "First Name";
             this.fname.Leave += new System.EventHandler(this.name_ValueChanged);
             // 
             // AddQuote
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(600, 366);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.submitBtn);
             this.Controls.Add(this.rushOptLabel);
             this.Controls.Add(this.rushOpt);
@@ -334,7 +354,7 @@
             this.Controls.Add(this.lname);
             this.Controls.Add(this.fname);
             this.Controls.Add(this.menuBtn);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "AddQuote";
             this.Text = "Add New Quote";
             ((System.ComponentModel.ISupportInitialize)(this.width)).EndInit();

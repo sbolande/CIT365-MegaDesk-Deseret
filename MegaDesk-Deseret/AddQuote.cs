@@ -223,10 +223,5 @@ namespace MegaDesk_Deseret
                 return true;
             }
         }
-
-        private void rushOpt_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }
