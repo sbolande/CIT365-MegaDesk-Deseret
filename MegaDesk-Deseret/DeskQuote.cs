@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -48,26 +49,61 @@ namespace MegaDesk_Deseret
 
         private decimal GetRushPrice(decimal size)
         {
-            switch (Desk.ProductionDays)
+            int DayPosition;
+            int SizePosition;
+
+            if (Desk.ProductionDays < 14) DayPosition = DefineRushDayPosition(Desk.ProductionDays);
+            else { return 0; }
+
+            SizePosition = DefineRushSizePosition(size);
+
+            return GetRushOrder(DayPosition, SizePosition);
+        }
+
+        private int DefineRushDayPosition(int productionDays)
+        {
+            switch (productionDays)
             {
                 case 3:
-                    if (size < 1000) return 60;
-                    else if (size >= 1000 && size <= 2000) return 70;
-                    else if (size > 2000) return 80;
-                    else return 0;
+                    return 0;
                 case 5:
-                    if (size < 1000) return 40;
-                    else if (size >= 1000 && size <= 2000) return 50;
-                    else if (size > 2000) return 60;
-                    else return 0;
+                    return 1;
                 case 7:
-                    if (size < 1000) return 30;
-                    else if (size >= 1000 && size <= 2000) return 35;
-                    else if (size > 2000) return 40;
-                    else return 0;
+                    return 2;
                 default:
                     return 0;
             }
+        }
+
+        private int DefineRushSizePosition(decimal productionSize)
+        {
+            if (productionSize < 1000) return 0;
+            else if (productionSize > 1000 && productionSize < 2000) return 1;
+            else return 2;
+        }
+
+        private int GetRushOrder(int Day, int Size)
+        {
+            string textFile = AppDomain.CurrentDomain.BaseDirectory + @"/files/rushOrderPrices.txt";
+
+            string[] lines = File.ReadAllLines(textFile);
+            int[] rushPrices = lines.Select(int.Parse).ToArray();
+
+            int ROWS = 3;
+            int COLUMNS = 3;
+            int[,] PriceByDays = new int[3,3];
+
+
+            for (int i = 0; i < ROWS; i++)
+            {
+                for (int j = 0; j < COLUMNS; j++)
+                {
+                    PriceByDays[i,j] = rushPrices[(i * COLUMNS) + j];
+                }
+                    
+            }
+
+            return PriceByDays[Day,Size];
         }
     }
 }
