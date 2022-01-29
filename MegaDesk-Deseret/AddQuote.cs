@@ -49,7 +49,8 @@ namespace MegaDesk_Deseret
             var desktopMaterial = (DesktopMaterial)Enum.Parse(typeof(DesktopMaterial), materialOpt);
 
             // get Rush Option value as integer (number of days)
-            var productionDays = Convert.ToInt32(rushOpt.SelectedValue);
+            Console.WriteLine(rushOpt.SelectedValue);
+            var productionDays = ConvertProductionDays((string)rushOpt.SelectedItem);
 
             // produce desk and quote objects
             var desk = new Desk(width.Value, depth.Value, (int)drawerCount.Value, desktopMaterial, productionDays);
@@ -74,6 +75,23 @@ namespace MegaDesk_Deseret
             displayQuoteForm.Show(this);
             // hide the AddQuote form
             Hide();
+        }
+
+        private int ConvertProductionDays(string rushOptValue)
+        {
+            switch (rushOptValue)
+            {
+                case "14 days(standard)":
+                    return 14;
+                case "7 days":
+                    return 7;
+                case "5 days":
+                    return 5;
+                case "3 days":
+                    return 3;
+                default:
+                    return 14;
+            }
         }
 
         /******************** VALUE CHANGE AND LEAVE FOCUS EVENT HANDLERS ********************/
