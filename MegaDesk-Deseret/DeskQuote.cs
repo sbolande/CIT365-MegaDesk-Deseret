@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace MegaDesk_Deseret
 {
@@ -84,9 +85,9 @@ namespace MegaDesk_Deseret
 
         private int GetRushOrder(int Day, int Size)
         {
-            string textFile = AppDomain.CurrentDomain.BaseDirectory + @"/files/rushOrderPrices.txt";
+            string dir = Application.StartupPath;
 
-            string[] lines = File.ReadAllLines(textFile);
+            string[] lines = File.ReadAllLines(dir + "/files/rushOrderPrices.txt");
             int[] rushPrices = lines.Select(int.Parse).ToArray();
 
             int ROWS = 3;
