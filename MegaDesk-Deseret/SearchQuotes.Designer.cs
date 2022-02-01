@@ -32,6 +32,7 @@
             this.rushOptLabel = new System.Windows.Forms.Label();
             this.materialOpts = new System.Windows.Forms.ComboBox();
             this.searchButton = new System.Windows.Forms.Button();
+            this.listViewResults = new System.Windows.Forms.ListView();
             this.SuspendLayout();
             // 
             // menuBtn
@@ -39,7 +40,7 @@
             this.menuBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.menuBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.menuBtn.Location = new System.Drawing.Point(456, 325);
-            this.menuBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.menuBtn.Margin = new System.Windows.Forms.Padding(2);
             this.menuBtn.Name = "menuBtn";
             this.menuBtn.Size = new System.Drawing.Size(135, 31);
             this.menuBtn.TabIndex = 3;
@@ -67,6 +68,7 @@
             this.materialOpts.Name = "materialOpts";
             this.materialOpts.Size = new System.Drawing.Size(157, 21);
             this.materialOpts.TabIndex = 1;
+            this.materialOpts.SelectedIndexChanged += new System.EventHandler(this.materialOpts_SelectedIndexChanged);
             // 
             // searchButton
             // 
@@ -77,17 +79,30 @@
             this.searchButton.TabIndex = 2;
             this.searchButton.Text = "Search";
             this.searchButton.UseVisualStyleBackColor = true;
+            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
+            // 
+            // listViewResults
+            // 
+            this.listViewResults.HideSelection = false;
+            this.listViewResults.Location = new System.Drawing.Point(12, 48);
+            this.listViewResults.Name = "listViewResults";
+            this.listViewResults.Size = new System.Drawing.Size(579, 272);
+            this.listViewResults.TabIndex = 0;
+            this.listViewResults.UseCompatibleStateImageBehavior = false;
+            this.listViewResults.View = System.Windows.Forms.View.Details;
+            this.listViewResults.SelectedIndexChanged += new System.EventHandler(this.listViewResults_SelectedIndexChanged);
             // 
             // SearchQuotes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(600, 366);
+            this.Controls.Add(this.listViewResults);
             this.Controls.Add(this.searchButton);
             this.Controls.Add(this.materialOpts);
             this.Controls.Add(this.rushOptLabel);
             this.Controls.Add(this.menuBtn);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "SearchQuotes";
             this.Text = "SearchQuotes";
             this.ResumeLayout(false);
@@ -101,5 +116,6 @@
         private System.Windows.Forms.Label rushOptLabel;
         private System.Windows.Forms.ComboBox materialOpts;
         private System.Windows.Forms.Button searchButton;
+        private System.Windows.Forms.ListView listViewResults;
     }
 }
