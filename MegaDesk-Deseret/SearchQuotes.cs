@@ -20,6 +20,15 @@ namespace MegaDesk_Deseret
             InitializeComponent();
             var materialList = Enum.GetValues(typeof(DesktopMaterial)).Cast<DesktopMaterial>().ToList();
             materialOpts.DataSource = materialList;
+
+            listViewResults.Columns.Add("#", 30, HorizontalAlignment.Center);
+            listViewResults.Columns.Add("Name", 119, HorizontalAlignment.Center);
+            listViewResults.Columns.Add("Date", 75, HorizontalAlignment.Center);
+            listViewResults.Columns.Add("Size (W × D)", 50, HorizontalAlignment.Center);
+            listViewResults.Columns.Add("Drawers", 55, HorizontalAlignment.Center);
+            listViewResults.Columns.Add("Material", 90, HorizontalAlignment.Center);
+            listViewResults.Columns.Add("Days", 50, HorizontalAlignment.Center);
+            listViewResults.Columns.Add("Total", 60, HorizontalAlignment.Center);
         }
 
         /// <summary>
@@ -38,30 +47,33 @@ namespace MegaDesk_Deseret
             {
                 string MaterialSelected = materialOpts.SelectedItem.ToString();
 
+                listViewResults.Items.Clear();
+
                 if (_quotes == null || !_quotes.Any())
                 {
                     MessageBox.Show("No quote found", "Error Reading File");
                 }
                 else
                 {
-                    listViewResults.Columns.Add("#", 30, HorizontalAlignment.Center);
-                    listViewResults.Columns.Add("Name", 119, HorizontalAlignment.Center);
-                    listViewResults.Columns.Add("Date", 75, HorizontalAlignment.Center);
-                    listViewResults.Columns.Add("Width", 50, HorizontalAlignment.Center);
-                    listViewResults.Columns.Add("Depth", 50, HorizontalAlignment.Center);
-                    listViewResults.Columns.Add("Drawers", 55, HorizontalAlignment.Center);
-                    listViewResults.Columns.Add("Material", 90, HorizontalAlignment.Center);
-                    listViewResults.Columns.Add("Days", 50, HorizontalAlignment.Center);
-                    listViewResults.Columns.Add("Total", 60, HorizontalAlignment.Center);
-
-                    int quoteCount = 0;
-                    string[] fieldvalue = MaterialSelected.Split(',');
-                    if (fieldvalue[5] == MaterialSelected)
-                    {
-                        quoteCount++;
-                        listViewResults.Items.Add(new ListViewItem(new[] { quoteCount.ToString(), fieldvalue[0], fieldvalue[1], fieldvalue[2], fieldvalue[3], fieldvalue[4], fieldvalue[5], fieldvalue[6], "$" + fieldvalue[7] }));
-                    }
-
+                    _quotes.Where(q => q.Desk.DesktopMaterial.ToString() == MaterialSelected)
+                        .Select((quote, index) => (quote, index))
+                        .ToList()
+                        .ForEach(quote =>
+                        {
+                            var i = quote.index;
+                            var q = quote.quote;
+                            listViewResults.Items.Add(new ListViewItem(new[]
+                            {
+                                i.ToString(),
+                                $"{q.FirstName} {q.LastName}",
+                                q.QuoteDate.ToString(),
+                                $"{(int)q.Desk.Width} × {(int)q.Desk.Depth}",
+                                q.Desk.DrawerCount.ToString(),
+                                q.Desk.DesktopMaterial.ToString(),
+                                q.Desk.ProductionDays.ToString(),
+                                $"${q.Value}"
+                            }));
+                        });
                 }
             }
             catch (Exception ex)
