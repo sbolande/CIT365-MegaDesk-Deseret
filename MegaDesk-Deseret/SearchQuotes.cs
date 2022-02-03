@@ -21,14 +21,14 @@ namespace MegaDesk_Deseret
             var materialList = Enum.GetValues(typeof(DesktopMaterial)).Cast<DesktopMaterial>().ToList();
             materialOpts.DataSource = materialList;
 
-            listViewResults.Columns.Add("#", 30, HorizontalAlignment.Center);
-            listViewResults.Columns.Add("Name", 119, HorizontalAlignment.Center);
-            listViewResults.Columns.Add("Date", 75, HorizontalAlignment.Center);
-            listViewResults.Columns.Add("Size (W × D)", 50, HorizontalAlignment.Center);
+            listViewResults.Columns.Add("#", 40, HorizontalAlignment.Center);
+            listViewResults.Columns.Add("Name", 104, HorizontalAlignment.Center);
+            listViewResults.Columns.Add("Date", 80, HorizontalAlignment.Center);
+            listViewResults.Columns.Add("Size (W × D)", 75, HorizontalAlignment.Center);
             listViewResults.Columns.Add("Drawers", 55, HorizontalAlignment.Center);
             listViewResults.Columns.Add("Material", 90, HorizontalAlignment.Center);
             listViewResults.Columns.Add("Days", 50, HorizontalAlignment.Center);
-            listViewResults.Columns.Add("Total", 60, HorizontalAlignment.Center);
+            listViewResults.Columns.Add("Total", 85, HorizontalAlignment.Center);
         }
 
         /// <summary>
