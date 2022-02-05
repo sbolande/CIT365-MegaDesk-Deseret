@@ -60,7 +60,7 @@ namespace MegaDesk_Deseret
                         .ToList()
                         .ForEach(quote =>
                         {
-                            var i = quote.index;
+                            var i = quote.index + 1;
                             var q = quote.quote;
                             listViewResults.Items.Add(new ListViewItem(new[]
                             {
